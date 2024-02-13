@@ -1,14 +1,13 @@
 version: '3.4'
 services:
-  # worker:
-  #   restart: always
-  #   build:
-  #     context: .
-  #     dockerfile: ./worker/workerDockerFile
-  #   env_file: .env
-  #   volumes:
-  #     - /usr/src/app/static
-  #     - .:/app
+  worker:
+    restart: always
+    build:
+      context: .
+      dockerfile: ./worker/workerDockerFile
+    volumes:
+      - /usr/src/app/static
+      - .:/app
   queue:
     image: rabbitmq:3.9-alpine
     restart: unless-stopped

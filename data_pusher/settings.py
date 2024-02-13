@@ -22,6 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-(ur$$79)x@!6xwe84bw9rk@*)2bc#j^aj@(fl44*vpjm60z@-i'
 
+CELERY_BROKER_URL="amqp://rabbit:rabbitmq@queue:5672"
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -39,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'account',
     'destination',
-    'data_handler'
+    'data_handler',
+    'worker'
 ]
 
 MIDDLEWARE = [

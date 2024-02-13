@@ -16,9 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from data_handler.views import SendDataToDestinations
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('account/', include('account.urls')),
-    path('destination/', include('destination.urls'))
+    path('destination/', include('destination.urls')),
+    path('server/incoming_data', SendDataToDestinations.as_view())
 ]
