@@ -105,7 +105,63 @@ The backend architecture is designed with two services and one Queue
      ![Screenshot from 2024-02-14 10-21-32](https://github.com/Gangadhar454/data_pusher/assets/36883246/d292faa4-575b-4fe9-9d26-6da357aa94c2)
 
 
+ ### Destination module API Endpoints
+ 1. #### API to Create Destination
+    `POST` - http://localhost:8000/destination/
+    
+    Payload:
+    
+    ```json
+    {
+        "account_id": 3,
+        "url": "https://ww.google.com",
+        "http_method": "GET",
+        "headers": {
+            "APP_ID": "1234APPID1234",
+            "APP_SECTET": "enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s",
+            "ACTION": "user.update",
+            "Content-Type": "application/json",
+            "Accept": "*"
+        }
+    }
+    ```
+    ![Screenshot from 2024-02-14 10-54-43](https://github.com/Gangadhar454/data_pusher/assets/36883246/11c975bd-2f70-4a91-841f-243308d39878)
 
+
+  2. #### API to fetch a Destination
+     `GET` - http://localhost:8000/destination/?account_id=3
+     ![Screenshot from 2024-02-14 11-29-29](https://github.com/Gangadhar454/data_pusher/assets/36883246/2e3325c5-b446-41b6-816a-1ec496cd89b3)
+
+  4. ### API to update a Destination
+     `PATCH` - http://localhost:8000/destination/
+
+     Payload:
+     ```json
+     {
+         "destination_id": 3,
+         "url": "https://ww.facebook.com",
+         "http_method": "GET",
+         "headers": {
+             "APP_ID": "1234APPID1234",
+             "APP_SECTET": "enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s",
+             "ACTION": "user.update",
+             "Content-Type": "application/json",
+             "Accept": "*"
+         }
+     }
+     ```
+     ![Screenshot from 2024-02-14 11-24-24](https://github.com/Gangadhar454/data_pusher/assets/36883246/5be4941c-f1c9-4132-bfaa-46bdbc9e3534)
+
+  5. ### API to Delete a Destination
+     `DELETE` - http://localhost:8000/destination/
+
+      Payload:
+     ```json
+     {
+         "destination_id": 2
+     }
+     ```
+     ![Screenshot from 2024-02-14 11-21-18](https://github.com/Gangadhar454/data_pusher/assets/36883246/27ed5570-8d48-4ed4-83cc-553edc9a0e61)
 
 
 
