@@ -163,5 +163,21 @@ The backend architecture is designed with two services and one Queue
      ```
      ![Screenshot from 2024-02-14 11-21-18](https://github.com/Gangadhar454/data_pusher/assets/36883246/27ed5570-8d48-4ed4-83cc-553edc9a0e61)
 
+ ### API to recieve data and send to Destinations
+ `POST` - http://localhost:8000/server/incoming_data
+ 
+ Payload:
+ ```json
+ {
+     "account_id": 3,
+     "secret_token": "L6vdp2M0NO9ADiBEq77j1WtiEPcDHEw2",
+     "data": {
+         "message": "Debited 500 from credit card"
+     }
+ }
+ ```
+![Screenshot from 2024-02-14 11-47-58](https://github.com/Gangadhar454/data_pusher/assets/36883246/eb4f3980-2ffc-4a14-8866-6ec78a1847c8)
 
+`GET` - http://localhost:8000/server/incoming_data?account_id=3&secret_token=j98457&data={encoded data}
+![Screenshot from 2024-02-14 11-49-40](https://github.com/Gangadhar454/data_pusher/assets/36883246/e558c52a-a9c0-4160-86e6-fec6290a8f65)
 
